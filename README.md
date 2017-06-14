@@ -24,3 +24,6 @@ data-zoom-type : Adjacent | overlay
 
 data-image-zoom : Zoom Image src
 
+# Demo
+Open index.html
+
