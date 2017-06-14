@@ -1,0 +1,114 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Image Zoom</title>
+    <style>
+        .zoom-image{
+            
+            display: inline-block;
+            position: relative;
+            border: 1px solid;
+     
+        }
+        .zoom-type__adjacent{
+            /*width:640px;
+            height:400px;*/
+            overflow:hidden;
+            position:absolute;
+          
+        
+        
+        }
+        .zoom-type__overlay{
+          
+            overflow:hidden;
+            position:absolute;
+            top: 0;
+            left:0;
+            height: 100%;
+            width:100%;  
+        
+        }
+
+        .thumbnails{
+            float: left;
+            list-style-type: none;
+        }
+        .zoom-image__thumbnails{
+            float: left;
+            margin: 10px;
+        }
+    </style>
+    </head>
+    <body>
+        <h1>Image Zoom Demo</h1>
+
+        <h4>Adjacent Image Zoom</h4>
+        <div>
+            <div class="zoom-image" data-zoom-type="adjacent" data-image-zoom="./images/1_zoom.jpg">
+                <a href="./images/1_zoom.jpg">
+                    <img src="./images/1_standard.jpg" alt="">
+                </a>    
+                <!--<div class="zoom" style="width:640;height:360px;overflow:hidden;position:relative;"></div>-->
+            </div>
+
+        </div>
+
+
+        <h4>Overlay Image Zoom</h4>
+        <div>
+            <div class="zoom-image" data-zoom-type="overlay" data-image-zoom="./images/1_zoom.jpg">
+                <a href="./images/1_zoom.jpg">
+                    <img src="./images/1_standard.jpg" alt="">
+                </a>    
+                <!--<div class="zoom" style="width:640;height:360px;overflow:hidden;position:relative;"></div>-->
+            </div>
+
+        </div>
+
+       <h4>Thumbnails Selection Image Zoom</h4>
+       <div style="overflow: hidden">
+            <ul class="thumbnails">
+                <li data-image-zoom="./images/3_zoom_1.jpg"><a href="./images/3_standard_1.jpg"> <img src="./images/3_thumbnail_1.jpg" ></a></img> </li>
+                <li data-image-zoom="./images/3_zoom_2.jpg"><a href="./images/3_standard_2.jpg"> <img src="./images/3_thumbnail_2.jpg" ></img> </a></li>
+                <li data-image-zoom="./images/3_zoom_3.jpg"><a href="./images/3_standard_3.jpg"> <img src="./images/3_thumbnail_3.jpg" ></img> </a></li>
+                <li data-image-zoom="./images/3_zoom_4.jpg"><a href="./images/3_standard_4.jpg"> <img src="./images/3_thumbnail_4.jpg" ></img> </a></li>
+            </ul>
+            <div class="zoom-image zoom-image__thumbnails" data-zoom-type="overlay"
+             data-image-zoom="./images/3_zoom_1.jpg">
+                <a href="./images/3_zoom_1.jpg">
+                    <img src="./images/3_standard_1.jpg" alt="">
+                </a>    
+                <!--<div class="zoom" style="width:640;height:360px;overflow:hidden;position:relative;"></div>-->
+            </div>
+        </div>   
+
+
+        <h2>Usage</h2>
+        <strong>Initialization</strong>
+        <div style="padding:10px;">$('.zoom-image').imageZoom();</div>
+
+        <strong>Class</strong>
+        <div style="padding:10px;">Add class 'zoom-image' to root element</div>
+
+
+        <strong>HTML Attributes</strong>
+        <div style="padding:10px;">
+            <strong>data-zoom-type : </strong>  Adjacent | overlay
+            <br>
+            <strong>data-image-zoom : </strong>  Zoom Image src
+        </div>
+        
+        <strong>Example</strong>
+        <div id="ex-code"></div>
+           
+        
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="image-zoom.js"></script>
+        <script>
+            $('.zoom-image').imageZoom();
+            $('#ex-code').text('<div class="zoom-image" data-zoom-type="overlay" data-image-zoom="./images/1_zoom.jpg">'+
+                '<a href="./images/1_zoom.jpg"><img src="./images/1_standard.jpg" alt=""></a></div>')
+        </script>
+    </body>
+</html>
